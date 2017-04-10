@@ -4,7 +4,7 @@
   "description": "",
   "main": "src/server/app/js",
   "scripts": {
-    "postinstall": "npm install && gulp build",
+    "postinstall": "npm install --only=dev && gulp build",
     "start": "node src/server/app.js",
     "dev": "gulp",
     "test": "xo"
