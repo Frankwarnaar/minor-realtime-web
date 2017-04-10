@@ -16,15 +16,15 @@ $q-xs:     $q-xs-max;
 
 $q-sm-min: "screen and (min-width: #{$break-sm-min})";
 $q-sm-max: "screen and (max-width: #{$break-md})";
-$q-sm:     "screen and (min-width: #{$break-sm") and (max-width: #{$break-md})";
+$q-sm:     "screen and (min-width: #{$break-sm}) and (max-width: #{$break-md})";
 
 $q-md-min: "screen and (min-width: #{$break-md-min})";
 $q-md-max: "screen and (max-width: #{$break-lg})";
-$q-md:     "screen and (min-width: #{$break-md") and (max-width: #{$break-lg})";
+$q-md:     "screen and (min-width: #{$break-md}) and (max-width: #{$break-lg})";
 
 $q-lg-min: "screen and (min-width: #{$break-lg-min})";
 $q-lg-max: "screen and (max-width: #{$break-xl})";
-$q-lg:     "screen and (min-width: #{$break-lg") and (max-width: #{$break-xl})";
+$q-lg:     "screen and (min-width: #{$break-lg}) and (max-width: #{$break-xl})";
 
 $q-xl-min: "screen and (min-width: #{$break-xl-min})";
 $q-xl:     $q-xl-min;

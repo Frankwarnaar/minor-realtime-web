@@ -64,7 +64,7 @@ gulp.task('server', cb => {
 gulp.task('watch', ['watch:html', 'watchify', 'watch:sass']);
 
 gulp.task('watch:sass', ['sass'], () => {
-	return gulp.watch(config.assetsPath + '/styles/**/*.sass', ['sass']);
+	return gulp.watch(config.assetsPath + '/styles/**/*.scss', ['sass']);
 });
 
 gulp.task('watch:html', () => {
@@ -86,10 +86,7 @@ const handleError = err => {
 
 gulp.task('sass', () => {
 	return gulp.src(config.assetsPath + '/styles/app.scss')
-		.pipe(plumber({
-			errorHandler: handleError
-		}))
-		.pipe(sass())
+		.pipe(sass({errLogToConsole: true}))
 		.pipe(gulp.dest(config.distPath + '/css'))
 		.pipe(browserSync.stream());
 });
