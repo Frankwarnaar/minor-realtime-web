@@ -38,7 +38,7 @@ io.on('connection', socket => {
 
 	socket.on('cookies', message => {
 		console.log(message);
-	})
+	});
 
 	socket.on('disconnect', () => {
 		console.log(`${socket.id} disconnected`);
