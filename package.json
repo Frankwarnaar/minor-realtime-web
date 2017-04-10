@@ -4,7 +4,7 @@
   "description": "",
   "main": "src/server/app/js",
   "scripts": {
-    "start": "node src/server/app.js",
+    "start": "gulp build && node src/server/app.js",
     "dev": "gulp",
     "test": "xo"
   },
