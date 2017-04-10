@@ -6,13 +6,11 @@ const babelify  = require('babelify'),
 	gulp        = require('gulp'),
 	gulpif      = require('gulp-if'),
 	gutil       = require('gulp-util'),
-	plumber     = require('gulp-plumber'),
 	nodemon     = require('gulp-nodemon'),
 	sass        = require('gulp-sass'),
 	sequence    = require('run-sequence'),
 	source      = require('vinyl-source-stream'),
 	sourcemaps  = require('gulp-sourcemaps'),
-	watch       = require('gulp-watch'),
 	watchify    = require('watchify');
 
 /* ============================================================
@@ -77,7 +75,6 @@ gulp.task('watch:html', () => {
 const handleError = err => {
 	gutil.log(err);
 	browserSync.notify('An error occured!');
-	this.emit('end');
 };
 
 /* ============================================================
