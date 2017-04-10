@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="nl">
+<head>
+	<meta charset="UTF-8">
+	<link rel="manifest" href="/manifest.json">
+	<title>Realtime web</title>
+	<meta name="viewport" content="width=device-width">
+
+	<link href="<%= assetFingerprint('/css/app.css') %>" rel="stylesheet" as="style" onload="this.rel='stylesheet'">
+
+	</script>
+</head>
+<body>
+	<header class="navigation">
+		<nav>
+
+		</nav>
+	</header>
+	<%- content %>
+	<script src="<%= assetFingerprint('/js/bundle.js') %>" type="text/javascript"></script>
+</body>
+</html>
