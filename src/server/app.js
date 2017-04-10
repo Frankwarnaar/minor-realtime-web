@@ -34,6 +34,12 @@ const io = require('socket.io')(server);
 io.on('connection', socket => {
 	console.log(`Client ${socket.id} connected`);
 
+	socket.emit('connection', socket.id);
+
+	socket.on('cookies', message => {
+		console.log(message);
+	})
+
 	socket.on('disconnect', () => {
 		console.log(`${socket.id} disconnected`);
 	});
