@@ -7,7 +7,6 @@ In this repo, you can find my work for the course `realtime web` for my minor `e
 ```
 $ git clone https://github.com/Frankwarnaar/minor-realtime-web.git
 $ npm install
-$ gulp build
 $ npm start
 ```
 
