@@ -4,7 +4,6 @@ const path = require('path');
 const express = require('express');
 const compression = require('compression');
 const staticAsset = require('static-asset');
-const io = require('socket.io');
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -26,6 +25,16 @@ app.get('/', (req, res) => {
 	res.render('index');
 });
 
-app.listen(port, host, err => {
+const server = app.listen(port, host, err => {
 	err ? console.error(err) : console.log(`app running on http://localhost:${port}`);
+});
+
+const io = require('socket.io')(server);
+
+io.on('connection', socket => {
+	console.log(`Client ${socket.id} connected`);
+
+	socket.on('disconnect', () => {
+		console.log(`${socket.id} disconnected`);
+	});
 });

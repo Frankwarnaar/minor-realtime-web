@@ -86,7 +86,8 @@ const handleError = err => {
 
 gulp.task('sass', () => {
 	return gulp.src(config.assetsPath + '/styles/app.scss')
-		.pipe(sass({errLogToConsole: true}))
+		.pipe(sass())
+		.on('error', gutil.log)
 		.pipe(gulp.dest(config.distPath + '/css'))
 		.pipe(browserSync.stream());
 });
