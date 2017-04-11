@@ -66,7 +66,7 @@ gulp.task('watch:sass', ['sass'], () => {
 });
 
 gulp.task('watch:html', () => {
-	return gulp.watch(['*.html']).on('change', browserSync.reload);
+	return gulp.watch(['src/server/views/*', 'src/server/views/**/*']).on('change', browserSync.reload);
 });
 /* ============================================================
 	Error handler
