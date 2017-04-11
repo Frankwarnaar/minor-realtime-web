@@ -10,6 +10,8 @@ const port = process.env.PORT || 3000;
 const host = process.env.HOST || '0.0.0.0';
 const baseDir = 'build/client';
 
+const messages = [];
+
 app.engine('ejs', require('express-ejs-extend'));
 
 app.set('views', path.join(__dirname, './views'));
@@ -22,7 +24,9 @@ app.use(express.static(baseDir, {
 }));
 
 app.get('/', (req, res) => {
-	res.render('index');
+	res.render('index', {
+		messages
+	});
 });
 
 const server = app.listen(port, host, err => {
@@ -34,10 +38,9 @@ const io = require('socket.io')(server);
 io.on('connection', socket => {
 	console.log(`Client ${socket.id} connected`);
 
-	socket.emit('connection', socket.id);
-
-	socket.on('cookies', message => {
-		console.log(message);
+	socket.on('message', message => {
+		messages.push(message);
+		io.sockets.emit('message', message);
 	});
 
 	socket.on('disconnect', () => {

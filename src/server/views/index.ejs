@@ -1,3 +1,31 @@
 <% extend("_base/layout") %>
 
-<h1>Realtime web</h1>
+<main>
+	<h1>Chat</h1>
+	<form id="username-form">
+		<label>
+			Nickname
+			<input type="text" required/>
+		</label>
+		<input type="submit" value="Ok"/>
+	</form>
+
+	<section class="chats hidden">
+		<ul id="chats-list">
+			<% messages.map(message => { %>
+				<li>
+					<header>
+						<%= message.sender %> - <%= new Date(message.timestamp).toLocaleString() %>
+					</header>
+					<p><%= message.message %></p>
+				</li>
+			<% }); %>
+		</ul>
+		<form id="chat-form">
+			<label>Message
+				<input name="message" type="text" required/>
+			</label>
+			<input type="submit" value="Send"/>
+		</form>
+	</section>
+</main>
