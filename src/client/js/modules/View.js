@@ -12,7 +12,9 @@ class View {
 			</header>
 			<p>${message.message}</p>
 		`;
+		listItem.setAttribute('data-message', message.sender === this.app.username ? 'send' : 'received');
 		listItem.innerHTML = content;
+		listItem.classList.add('chat');
 		this.app.$.chatsList.appendChild(listItem);
 	}
 

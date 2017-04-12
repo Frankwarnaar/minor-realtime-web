@@ -13,7 +13,7 @@
 	<section class="chats hidden">
 		<ul id="chats-list">
 			<% messages.map(message => { %>
-				<li>
+				<li class="chat" data-message="<%= message.sender === username ? 'send' : 'received' %>">
 					<header>
 						<%= message.sender %> - <%= new Date(message.timestamp).toLocaleString() %>
 					</header>
