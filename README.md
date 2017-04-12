@@ -2,6 +2,9 @@
 
 In this repo, you can find my work for the course `realtime web` for my minor `everything-web` at the HvA Amsterdam.
 
+# Demo
+[https://realtime-web.herokuapp.com/](https://realtime-web.herokuapp.com/)
+
 ## Installation
 
 ```
