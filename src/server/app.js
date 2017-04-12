@@ -4,6 +4,7 @@ const path = require('path');
 const express = require('express');
 const compression = require('compression');
 const staticAsset = require('static-asset');
+const cookieParser = require('cookie-parser');
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -18,14 +19,23 @@ app.set('views', path.join(__dirname, './views'));
 app.set('view engine', 'ejs');
 
 app.use(compression());
+app.use(cookieParser());
 app.use(staticAsset(baseDir));
 app.use(express.static(baseDir, {
 	maxAge: 31557600000 // one year
 }));
 
 app.get('/', (req, res) => {
+	let username = null;
+	console.log(req.cookie);
+	if (req.cookie) {
+		if (req.cookie.username) {
+			username = req.cookie.username;
+		}
+	}
 	res.render('index', {
-		messages
+		messages,
+		username
 	});
 });
 
