@@ -35,3 +35,5 @@ An express server will start running and your files will be watched.
 ## Wish list
 * [x] Create realtime chat
 * [x] Align received and send messages
+* [ ] Align messages sent by you in earlier sessions on the right
+* [ ] Make sure usernames are unique
