@@ -33,4 +33,5 @@ An express server will start running and your files will be watched.
 [License here](https://github.com/Frankwarnaar/minor-realtime-web/blob/master/LICENSE)
 
 ## Wish list
-* [ ] Do things
+* [x] Create realtime chat
+* [ ] Align received and send messages
