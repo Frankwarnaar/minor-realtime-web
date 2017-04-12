@@ -34,4 +34,4 @@ An express server will start running and your files will be watched.
 
 ## Wish list
 * [x] Create realtime chat
-* [ ] Align received and send messages
+* [x] Align received and send messages
