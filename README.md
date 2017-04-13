@@ -1,6 +1,6 @@
-# Realtime web
+# Realtime web chat
 
-In this repo, you can find my work for the course `realtime web` for my minor `everything-web` at the HvA Amsterdam.
+With this application, users can chat realtime. 
 
 # Demo
 [https://realtime-web.herokuapp.com/](https://realtime-web.herokuapp.com/)
@@ -15,7 +15,8 @@ $ npm start
 
 ## Usage
 
-TODO: Write usage instructions
+1. Enter your username
+2. Chat!
 
 ## Development
 When developing on this project, run
